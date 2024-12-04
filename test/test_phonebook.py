@@ -7,26 +7,26 @@ class TestPhonebook:
         # Setup
         phonebook = Phonebook()
         # Chamada
-        assert phonebook.add("Alice", "12345") == "Numero adicionado"
+        assert phonebook.add("Jeferson", "12345") == "Numero adicionado"
         # Avaliação
-        assert "Alice" in phonebook.entries
-        assert phonebook.entries["Alice"] == "12345"
+        assert "Jeferson" in phonebook.entries
+        assert phonebook.entries["Jeferson"] == "12345"
 
     def test_add_nome_ja_existente(self):
         # Setup
         phonebook = Phonebook()
         # Chamada
-        phonebook.add("Alice", "12345")
+        phonebook.add("Jeferson", "12345")
         # Avaliação
-        assert phonebook.add("Alice", "67890") == "Nome já existente"
+        assert phonebook.add("Jeferson", "67890") == "Nome já existente"
 
     def test_lookup_sucesso(self):
         # Setup
         phonebook = Phonebook()
         # Chamada
-        phonebook.add("Alice", "12345")
+        phonebook.add("Jeferson", "12345")
         # Avaliação
-        assert phonebook.lookup("Alice") == "12345"
+        assert phonebook.lookup("Jeferson") == "12345"
 
     def test_lookup_falha(self):
         # Setup
@@ -37,10 +37,10 @@ class TestPhonebook:
         # Setup
         phonebook = Phonebook()
         # Chamada
-        phonebook.add("Alice", "12345")
+        phonebook.add("Jeferson", "12345")
         # Avaliação
-        assert phonebook.change_number("Alice", "67890") == "Numero atualizado"
-        assert phonebook.entries["Alice"] == "67890"
+        assert phonebook.change_number("Jeferson", "67890") == "Numero atualizado"
+        assert phonebook.entries["Jeferson"] == "67890"
 
     def test_change_number_nome_inexistente(self):
         # Setup
@@ -52,22 +52,22 @@ class TestPhonebook:
         # Setup
         phonebook = Phonebook()
         # Chamada
-        phonebook.add("Alice", "12345")
+        phonebook.add("Jeferson", "12345")
         # Avaliação
-        assert phonebook.change_number("Alice", "abcd") == "Numero invalido"
+        assert phonebook.change_number("Jeferson", "abcd") == "Numero invalido"
 
     def test_get_name_by_number_sucesso(self):
         # Setup
         phonebook = Phonebook()
         # Chamada
-        phonebook.add("Alice", "12345")
+        phonebook.add("Jeferson", "12345")
         # Avaliação
-        assert phonebook.get_name_by_number("12345") == "Alice"
+        assert phonebook.get_name_by_number("12345") == "Jeferson"
 
     def test_get_name_by_number_falha(self):
         # Setup
         phonebook = Phonebook()
         # Chamada
-        phonebook.add("Alice", "12345")
+        phonebook.add("Jeferson", "12345")
         # Avaliação
         assert phonebook.get_name_by_number("67890") == "Numero não encontrado"
